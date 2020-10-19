@@ -42,19 +42,3 @@ spec:
       nodePort: 30080
 
   type: NodePort
-
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: public-routing
-
-spec:
-  rules:
-    - host: facebook.com
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: fleetman-webapp
-              servicePort: 80
